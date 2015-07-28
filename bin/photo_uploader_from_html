@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'photo_uploader_from_html'
+
+PhotoUploaderFromHtml.run
