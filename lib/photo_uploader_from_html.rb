@@ -1,6 +1,5 @@
 require "photo_uploader_from_html/version"
 require 'mechanize'
-require 'pry'
 require 'tumblife'
 require 'yaml'
 
