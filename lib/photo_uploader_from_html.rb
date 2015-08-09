@@ -22,7 +22,7 @@ module PhotoUploaderFromHtml
   end
 
   def replace(string)
-    string.gsub(/<img width=(\d+) src='(\S+)'>/) do
+    string.gsub(/<img width=([\d"]+) src='(\S+)'>/) do
       width, src = $1, $2
       if /\A\d+\.media\.tumblr\.com/ =~ src
         %Q(<img width=#{width} src='#{src}'>)
