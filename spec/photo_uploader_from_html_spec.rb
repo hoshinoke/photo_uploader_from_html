@@ -30,6 +30,17 @@ describe PhotoUploaderFromHtml do
           eq(%(<img width="240" src='tumbler_url'>))
       end
     end
+
+    context 'given img tag' do
+      let(:string){ %(<img width="240" src="http://example.com/1.jpg">) }
+      it do
+        expect(PhotoUploaderFromHtml).to receive(:upload)
+        .with('http://example.com/1.jpg').and_return('tumbler_url')
+
+        expect(PhotoUploaderFromHtml.replace(string)).to \
+          eq(%(<img width="240" src='tumbler_url'>))
+      end
+    end
   end
 
   describe '.upload' do
